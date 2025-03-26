@@ -151,15 +151,15 @@ li {
 
 /* Imagens */
 #exp1 {
-    background-image: url("/IMAGENS/enersto.png");
+    background-image: url("IMAGENS/enersto.png");
 }
 
 #exp2 {
-    background-image: url("/IMAGENS/INV.jpeg");
+    background-image: url("IMAGENS/INV.jpeg");
 }
 
 #exp3 {
-    background-image: url("/IMAGENS/ENer.gif");
+    background-image: url("IMAGENS/ENer.gif");
 }
 
 #exp4 {
@@ -570,7 +570,7 @@ li {
 .sobre-mim-img {
     width: 500px;
     height: 500px;
-    background: url("/IMG/Design\ sem\ nome.png") no-repeat center center;
+    background: url("IMG/Design\ sem\ nome.png") no-repeat center center;
     background-size: cover;
 
 }
