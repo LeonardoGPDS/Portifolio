@@ -23,5 +23,5 @@ function closeModal() {
 }
 function showLoadingScreen(platform) {
     // Redireciona para a página de carregamento (../HTML/Loading.html)
-    window.location.href = "../HTML/Loading.html?platform=" + platform;
+    window.location.href = "HTML/Loading.html?platform=" + platform;
 }
