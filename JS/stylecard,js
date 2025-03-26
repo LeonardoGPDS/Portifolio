@@ -1,0 +1,27 @@
+function showModal(expId) {
+    var modal = document.getElementById('modal');
+    var title = document.getElementById('modal-title');
+    var description = document.getElementById('modal-description');
+
+    if (expId === 'exp1') {
+        title.textContent = "Projeto ENBAD";
+        description.textContent = "Descrição detalhada do Projeto ENBAD...";
+    } else if (expId === 'exp2') {
+        title.textContent = "Projeto IV5";
+        description.textContent = "Descrição detalhada do Projeto IV5...";
+    } else if (expId === 'exp3') {
+        title.textContent = "Projeto ENER";
+        description.textContent = "Descrição detalhada do Projeto ENER...";
+    }
+
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+function showLoadingScreen(platform) {
+    // Redireciona para a página de carregamento (loading.html)
+    window.location.href = "loading.html?platform=" + platform;
+}
