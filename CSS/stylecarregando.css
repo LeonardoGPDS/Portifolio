@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Consolas", monospace;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #050801;
+    color: #ffffff;
+}
+
+img {
+    width: 170px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #ffffef;
+    font-size: 84px;
+    text-decoration: none;
+    overflow: hidden;
+    letter-spacing: 4px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #4caf50);
+}
+
+.btn:nth-child(1) {
+    filter: hue-rotate(390deg);
+}
+
+.btn span {
+    position: absolute;
+    display: block;
+}
+
+/* Animação da borda superior */
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(40deg, transparent, #4caf50);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Animação da borda direita */
+.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #4caf50);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* Animação da borda inferior */
+.btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #4caf50);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+/* Animação da borda esquerda */
+.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #4caf50);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Animação de digitação */
+.anima {
+    font-size: 20px;
+    display: inline-block;
+    border-right: 2px solid #4caf50;
+    padding-right: 3px;
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: escrever 2s steps(10) forwards, pisca 0.5s infinite step-end;
+}
+
+/* Animação para "digitar" o texto */
+@keyframes escrever {
+    100% {
+        max-width: 100%;
+    }
+}
+
+/* Animação para o cursor piscando */
+@keyframes pisca {
+    50% {
+        border-right-color: transparent;
+    }
+    100% {
+        border-right-color: #4caf50;
+    }
+}

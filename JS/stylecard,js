@@ -1,0 +1,151 @@
+function showModal(expId) {
+    var modal = document.getElementById('modal');
+    var title = document.getElementById('modal-title');
+    var description = document.getElementById('modal-description');
+
+    if (expId === 'exp1') {
+        title.textContent = "Projeto ENBAD";
+        description.textContent = "Descrição detalhada do Projeto ENBAD...";
+    } else if (expId === 'exp2') {
+        title.textContent = "Projeto IV5";
+        description.textContent = "Descrição detalhada do Projeto IV5...";
+    } else if (expId === 'exp3') {
+        title.textContent = "Projeto ENER";
+        description.textContent = "Descrição detalhada do Projeto ENER...";
+    }
+
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+function showLoadingScreen(platform) {
+    // Redireciona para a página de carregamento (loading.html)
+    window.location.href = "loading.html?platform=" + platform;
+}
+const carrosselInner = document.getElementById('carrosselInner');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+
+  const totalImgs = carrosselInner.children.length;
+  let currentIndex = 0;
+  let intervalo;
+
+  function atualizarCarrossel() {
+    carrosselInner.style.transform = `translateX(-${currentIndex * 800}px)`;
+  }
+
+  function proximo() {
+    currentIndex = (currentIndex + 1) % totalImgs;
+    atualizarCarrossel();
+  }
+
+  function anterior() {
+    currentIndex = (currentIndex - 1 + totalImgs) % totalImgs;
+    atualizarCarrossel();
+  }
+
+  // Troca automática a cada 7 segundos
+  function iniciarIntervalo() {
+    intervalo = setInterval(proximo, 7000);
+  }
+
+  function reiniciarIntervalo() {
+    clearInterval(intervalo);
+    iniciarIntervalo();
+  }
+
+  btnNext.addEventListener('click', () => {
+    proximo();
+    reiniciarIntervalo();
+  });
+
+  btnPrev.addEventListener('click', () => {
+    anterior();
+    reiniciarIntervalo();
+  });
+
+  // Inicia auto play
+  iniciarIntervalo();
+  function showModalExp(expId) {
+    const modal = document.getElementById('exp-modal');
+    const title = document.getElementById('exp-modal-title');
+    const description = document.getElementById('exp-modal-description');
+
+    switch (expId) {
+        case 'exp1':
+            title.textContent = "Projeto ENBAD";
+            description.textContent = "Descrição detalhada do Projeto ENBAD...";
+            break;
+        case 'exp2':
+            title.textContent = "Projeto IV5";
+            description.textContent = "Descrição detalhada do Projeto IV5...";
+            break;
+        case 'exp3':
+            title.textContent = "Projeto ENER";
+            description.textContent = "Descrição detalhada do Projeto ENER...";
+            break;
+        default:
+            title.textContent = "Projeto";
+            description.textContent = "Descrição não encontrada.";
+    }
+
+    modal.style.display = "block";
+}
+
+function closeModalExp() {
+    document.getElementById('exp-modal').style.display = "none";
+}
+
+function showExpLoadingScreen(platform) {
+    window.location.href = "loading.html?platform=" + platform;
+}
+
+// Carrossel EXP
+const expCarrosselInner = document.getElementById('expCarrosselInner');
+const expBtnPrev = document.getElementById('expBtnPrev');
+const expBtnNext = document.getElementById('expBtnNext');
+
+let expCurrentIndex = 0;
+const expTotalCards = expCarrosselInner.children.length;
+let expIntervalo;
+
+function atualizarExpCarrossel() {
+    const larguraCard = expCarrosselInner.children[0].offsetWidth; // ajusta dinamicamente
+    expCarrosselInner.style.transform = `translateX(-${expCurrentIndex * larguraCard}px)`;
+}
+
+function proximoExp() {
+    expCurrentIndex = (expCurrentIndex + 1) % expTotalCards;
+    atualizarExpCarrossel();
+}
+
+function anteriorExp() {
+    expCurrentIndex = (expCurrentIndex - 1 + expTotalCards) % expTotalCards;
+    atualizarExpCarrossel();
+}
+
+function iniciarExpIntervalo() {
+    expIntervalo = setInterval(proximoExp, 7000);
+}
+
+function reiniciarExpIntervalo() {
+    clearInterval(expIntervalo);
+    iniciarExpIntervalo();
+}
+
+// Botões
+expBtnNext.addEventListener('click', () => {
+    proximoExp();
+    reiniciarExpIntervalo();
+});
+
+expBtnPrev.addEventListener('click', () => {
+    anteriorExp();
+    reiniciarExpIntervalo();
+});
+
+// Auto play
+iniciarExpIntervalo();
