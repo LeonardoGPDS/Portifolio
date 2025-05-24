@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="refresh" content="5">
+	<link rel="stylesheet" type="text/css" href="/CSS/stylecarregando.css">
+	<link rel="icon" style="color: green;"href="img/cervo.png">
+	
+	<title>Carregando.....</title>
+</head>
+<body>
+	
+			<a href="#" class="btn">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<img src="/IMG/teste.png"><br>
+		<div style="text-align: center; color: #4caf50" class="anima" >Carregando...</div>
+		
+		</a>
+
+		<script>
+			// Função para obter parâmetros da URL
+			function getParameterByName(name) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(name);
+			}
+	
+			// Redirecionar após 1.5 segundos com base na plataforma
+			setTimeout(function() {
+				const platform = getParameterByName('platform');
+				if (platform === 'facebook') {
+					window.location.href = 'https://www.facebook.com';
+				}else if (platform === 'Email') {
+	alert('Você será redirecionado para o Gmail para enviar um e-mail. Caso não tenha Gmail, envie manualmente para: leonardo.gpds@gmail.com');
+
+	// Após clicar em OK, redireciona
+	window.location.href = 'https://mail.google.com/mail/u/0/#inbox?compose=SxfkdsFSCTXPSvlLKclhcrpPPzlpzxtlQcJFDhXDRGMvvMHjmHSdwxshNRJGPcBjRmxhgdTGnsShknrzvHcqchBhFMdpLWkJHVFHqnGqqrlWSqWFBqq';
+
+
+				} else if (platform === 'whatsapp') {
+					window.location.href = 'https://wa.me/67992255392';
+				}
+				  else if (platform === 'linkedin') {
+					window.location.href = 'https://www.linkedin.com/in/leonardo-gledson-palhano-9598bb15a/';
+				}
+			}, 2500); // Tempo de delay da tela de carregamento
+		</script>
+</body>
+</html>
