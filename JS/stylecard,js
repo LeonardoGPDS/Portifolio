@@ -23,7 +23,7 @@ function closeModal() {
 }
 function showLoadingScreen(platform) {
     // Redireciona para a página de carregamento (Loading.html)
-    window.location.href = "./loading.html?platform=" + platform;
+    window.location.href = "loading.html?platform=" + platform;
 }
 const carrosselInner = document.getElementById('carrosselInner');
   const btnPrev = document.getElementById('btnPrev');
