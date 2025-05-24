@@ -646,7 +646,8 @@ li {
 .sobre-mim-img {
     width: 500px;
     height: 500px;
-    background: url("/IMAGENS/perfil.png") no-repeat center center;
+    background-image: url("./IMAGENS/perfil.png");
+    background: url("./IMAGENS/perfil.png") no-repeat center center;
     background-size: cover;
 
 }
